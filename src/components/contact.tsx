@@ -5,11 +5,17 @@ import { toast } from "sonner";
 
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
+import { type Language } from "../locales";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
 
+type ContactProps = {
+  language: Language;
+};
+
 // Contact
-export const Contact = () => {
+export const Contact = ({ language }: ContactProps) => {
+  const isItalian = language === "it";
   const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState({
     name: "",
@@ -98,18 +104,26 @@ export const Contact = () => {
         import.meta.env.VITE_APP_TEMPLATE_ID,
         {
           from_name: form.name,
-          to_name: "Shubham",
+          to_name: "Francesco Alongi",
           from_email: form.email.trim().toLowerCase(),
           to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_KEY,
       )
-      .then(() => toast.success("Thanks for contacting me."))
+      .then(() =>
+        toast.success(
+          isItalian
+            ? "Grazie per avermi contattato."
+            : "Thanks for contacting me.",
+        ),
+      )
       .catch((error) => {
         // Error handle
         console.log("[CONTACT_ERROR]: ", error);
-        toast.error("Something went wrong.");
+        toast.error(
+          isItalian ? "Qualcosa e andato storto." : "Something went wrong.",
+        );
       })
       .finally(() => {
         setLoading(false);
@@ -129,8 +143,12 @@ export const Contact = () => {
           className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
         >
           {/* Title */}
-          <p className={styles.sectionSubText}>Get in touch</p>
-          <h3 className={styles.sectionHeadText}>Contact.</h3>
+          <p className={styles.sectionSubText}>
+            {isItalian ? "Restiamo in contatto" : "Get in touch"}
+          </p>
+          <h3 className={styles.sectionHeadText}>
+            {isItalian ? "Contatti." : "Contact."}
+          </h3>
 
           {/* Form */}
           <form
@@ -140,15 +158,17 @@ export const Contact = () => {
           >
             {/* Name */}
             <label htmlFor="name" className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Name*</span>
+              <span className="text-white font-medium mb-4">
+                {isItalian ? "Il tuo nome*" : "Your Name*"}
+              </span>
               <input
                 type="text"
                 name="name"
                 id="name"
                 value={form.name}
                 onChange={handleChange}
-                placeholder="John Doe"
-                title="What's your name?"
+                placeholder={isItalian ? "Mario Rossi" : "John Doe"}
+                title={isItalian ? "Come ti chiami?" : "What's your name?"}
                 disabled={loading}
                 aria-disabled={loading}
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60"
@@ -156,13 +176,15 @@ export const Contact = () => {
 
               {/* Invalid Name */}
               <span className="text-red-400 mt-2 hidden" id="name-error">
-                Invalid Name!
+                {isItalian ? "Nome non valido!" : "Invalid Name!"}
               </span>
             </label>
 
             {/* Email */}
             <label htmlFor="email" className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Email*</span>
+              <span className="text-white font-medium mb-4">
+                {isItalian ? "La tua email*" : "Your Email*"}
+              </span>
               <input
                 type="email"
                 name="email"
@@ -170,7 +192,7 @@ export const Contact = () => {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="johndoe@email.com"
-                title="What's your email?"
+                title={isItalian ? "Qual e la tua email?" : "What's your email?"}
                 disabled={loading}
                 aria-disabled={loading}
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60"
@@ -178,21 +200,27 @@ export const Contact = () => {
 
               {/* Invalid Email */}
               <span className="text-red-400 mt-2 hidden" id="email-error">
-                Invalid E-mail!
+                {isItalian ? "Email non valida!" : "Invalid E-mail!"}
               </span>
             </label>
 
             {/* Message */}
             <label htmlFor="message" className="flex flex-col">
-              <span className="text-white font-medium mb-4">Your Message*</span>
+              <span className="text-white font-medium mb-4">
+                {isItalian ? "Il tuo messaggio*" : "Your Message*"}
+              </span>
               <textarea
                 rows={7}
                 name="message"
                 id="message"
                 value={form.message}
                 onChange={handleChange}
-                placeholder="Hello there!"
-                title="What do you want to say?"
+                placeholder={isItalian ? "Ciao!" : "Hello there!"}
+                title={
+                  isItalian
+                    ? "Cosa vuoi scrivere?"
+                    : "What do you want to say?"
+                }
                 disabled={loading}
                 aria-disabled={loading}
                 className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium disabled:bg-tertiary/20 disabled:text-white/60 disabled:resize-none"
@@ -200,20 +228,34 @@ export const Contact = () => {
 
               {/* Invalid Message */}
               <span className="text-red-400 mt-2 hidden" id="message-error">
-                Invalid Message!
+                {isItalian ? "Messaggio non valido!" : "Invalid Message!"}
               </span>
             </label>
 
             {/* Submit */}
             <button
               type="submit"
-              title={loading ? "Sending..." : "Send"}
+              title={
+                loading
+                  ? isItalian
+                    ? "Invio in corso..."
+                    : "Sending..."
+                  : isItalian
+                    ? "Invia"
+                    : "Send"
+              }
               className="bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl disabled:bg-tertiary/20 disabled:text-white/60"
               disabled={loading}
               aria-disabled={loading}
             >
               {/* check loader state */}
-              {loading ? "Sending..." : "Send"}
+              {loading
+                ? isItalian
+                  ? "Invio in corso..."
+                  : "Sending..."
+                : isItalian
+                  ? "Invia"
+                  : "Send"}
             </button>
           </form>
         </motion.div>

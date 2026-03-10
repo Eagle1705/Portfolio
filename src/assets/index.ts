@@ -5,7 +5,7 @@ import backend from "./backend.png";
 import bulb from "./bulb.svg";
 import close from "./close.svg";
 import creator from "./creator.png";
-import logo from "./logo.svg";
+import logo from "./company/logo_clean.png";
 import menu from "./menu.svg";
 import mobile from "./mobile.png";
 import preview from "./preview.png";
@@ -46,6 +46,10 @@ import github from "./socials/github.svg";
 import linkedin from "./socials/linkedin.svg";
 import twitter from "./socials/twitter.svg";
 import youtube from "./socials/youtube.svg";
+
+import user1 from "./testimonials/user1.jpg";
+import user2 from "./testimonials/user2.jpg";
+import user3 from "./testimonials/user3.jpg";
 
 export {
   backend,
@@ -89,4 +93,7 @@ export {
   youtube,
   linkedin,
   twitter,
+  user1,
+  user2,
+  user3,
 };

@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 
 import { ComputersCanvas } from "./canvas";
+import { type Language } from "../locales";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
 
+type HeroProps = {
+  language: Language;
+};
+
 // Hero
-export const Hero = () => {
+export const Hero = ({ language }: HeroProps) => {
+  const isItalian = language === "it";
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -23,11 +30,13 @@ export const Hero = () => {
         {/* About Me */}
         <div>
           <h1 className={cn(styles.heroHeadText, "text-white")}>
-            Hi, I'm <span className="text-[#915eff]">Francesco Alongi</span>
+            {isItalian ? "Ciao, sono " : "Hi, I'm "}
+            <span className="text-[#915eff]">Francesco Alongi</span>
           </h1>
           <p className={cn(styles.heroSubText, "mt-2 text-white-100")}>
-            I develop 3D visuals, user <br className="sm:block hidden" />
-            interfaces and web applications
+            {isItalian ? "Sviluppo visual 3D, interfacce " : "I develop 3D visuals, user "}
+            <br className="sm:block hidden" />
+            {isItalian ? "utente e applicazioni web" : "interfaces and web applications"}
           </p>
         </div>
       </div>

@@ -3,19 +3,27 @@ import { Link } from "react-router-dom";
 
 import { logo, menu, close } from "../assets";
 import { NAV_LINKS } from "../constants";
+import { NAV_LABELS, type Language } from "../locales";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
 
 type NavbarProps = {
   hide: boolean;
+  language: Language;
+  setLanguage: (language: Language) => void;
 };
 
 // Navbar
-export const Navbar = ({ hide }: NavbarProps) => {
+export const Navbar = ({ hide, language, setLanguage }: NavbarProps) => {
   // state variables
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const navLabels = NAV_LABELS[language];
+
+  const toggleLanguage = () => {
+    setLanguage(language === "en" ? "it" : "en");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +59,8 @@ export const Navbar = ({ hide }: NavbarProps) => {
         >
           <img src={logo} alt="Logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] font-bold cursor-pointer flex">
-            Shubham&nbsp;<span className="sm:block hidden">| Developer</span>
+            Francesco Alongi&nbsp;
+            <span className="sm:block hidden">| Developer</span>
           </p>
         </Link>
 
@@ -68,14 +77,24 @@ export const Navbar = ({ hide }: NavbarProps) => {
             >
               {link.link ? (
                 <a href={link.link} target="_blank" rel="noreferrer noopener">
-                  {link.title}
+                  {navLabels[link.id] ?? link.title}
                 </a>
               ) : (
-                <a href={`#${link.id}`}>{link.title}</a>
+                <a href={`#${link.id}`}>{navLabels[link.id] ?? link.title}</a>
               )}
             </li>
           ))}
         </ul>
+
+        <button
+          type="button"
+          onClick={toggleLanguage}
+          className="hidden sm:inline-flex rounded-md border border-secondary/50 px-3 py-1 text-sm font-semibold text-white hover:border-white"
+          title="Switch language"
+          aria-label="Switch language"
+        >
+          {navLabels.langSwitch}
+        </button>
 
         {/* Hamburger Menu (Mobile) */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -112,13 +131,26 @@ export const Navbar = ({ hide }: NavbarProps) => {
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      {link.title}
+                      {navLabels[link.id] ?? link.title}
                     </a>
                   ) : (
-                    <a href={`#${link.id}`}>{link.title}</a>
+                    <a href={`#${link.id}`}>{navLabels[link.id] ?? link.title}</a>
                   )}
                 </li>
               ))}
+
+              <li className="w-full">
+                <button
+                  type="button"
+                  onClick={() => {
+                    toggleLanguage();
+                    setToggle(false);
+                  }}
+                  className="w-full rounded-md border border-secondary/50 px-3 py-2 text-left text-sm font-semibold text-white"
+                >
+                  {navLabels.langSwitch}
+                </button>
+              </li>
             </ul>
           </div>
         </div>
