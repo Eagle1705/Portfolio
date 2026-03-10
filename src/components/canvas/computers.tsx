@@ -13,6 +13,9 @@ const Computers = ({ isMobile }: ComputersProps) => {
   // Import scene
   const computer = useGLTF("./desktop_pc/scene.gltf");
 
+  // Return null if mobile to hide completely
+  if (isMobile) return null;
+
   return (
     // Mesh
     <mesh>

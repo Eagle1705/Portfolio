@@ -30,10 +30,6 @@ import {
   project4,
   project5,
   project6,
-  user1,
-  user2,
-  user3,
-  youtube,
   linkedin,
   twitter,
   github,
@@ -47,7 +43,7 @@ export const NAV_LINKS = [
     link: null,
   },
   {
-    id: "work",
+    id: "projects",
     title: "Work",
     link: null,
   },
@@ -208,69 +204,41 @@ export const EXPERIENCES = [
   },
 ] as const;
 
-// Testimonials
-export const TESTIMONIALS = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: user1,
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: user2,
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: user3,
-  },
-] as const;
-
 // Projects
 export const PROJECTS = [
   {
-    name: "Disney+ Clone",
+    name: "FSC Racing",
     description:
-      "Disney+ is one of the biggest streaming platforms used by millions of people world-wide and allows us to stream high quality content in 4k and various other formats",
+      "Official website for FSC Racing Team, showcasing team information, events, racing achievements, and providing a platform for fans to stay updated with the latest news and results from the team.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "firebase",
+        name: "javascript",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "tailwindcss",
         color: "pink-text-gradient",
       },
     ],
     image: project1,
-    source_code_link: "https://github.com/Eagle1705/Portfolio",
-    live_site_link: "https://clonedisneyplus.web.app/",
+    source_code_link: "https://github.com/FSC-Racing-Team/FSCSite-2.0",
+    live_site_link: "https://fscracing.it/",
   },
   {
-    name: "Golds Gym",
+    name: "GreenValley FC",
     description:
-      "Web application that enables users to search for fitness exercises, effective personalized positions, and recommends new exercises based on their personal preferences.",
+      "Official website for GreenValley FC football club, featuring team roster, match schedules, news updates, and fan engagement tools to connect with supporters and promote the club.",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "rapidapi",
+        name: "typescript",
         color: "green-text-gradient",
       },
       {
@@ -279,118 +247,26 @@ export const PROJECTS = [
       },
     ],
     image: project2,
-    source_code_link: "https://github.com/Eagle1705/Portfolio",
-    live_site_link: "https://fitness-gym-react.netlify.app/",
+    source_code_link: "https://github.com/Eagle1705/greenvalley",
+    live_site_link: "https://eagle1705.github.io/greenvalley/",
   },
-  {
-    name: "Shoppy",
-    description:
-      "The most personalised admin dashboard web application that allows enables users to choose customized themes and dark mode with different pages and variety of charts.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "syncfusion",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project3,
-    source_code_link: "https://github.com/Eagle1705/Portfolio",
-    live_site_link: "https://shoppy-dashboard-react.netlify.app/",
-  },
-  {
-    name: "TikTok Clone",
-    description:
-      "A Next JS Web Application that enables users to upload videos of any length and size, create accounts and connect with other people just like any other social media.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "nodejs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwindcss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project4,
-    source_code_link: "https://github.com/Eagle1705/Portfolio",
-    live_site_link: "https://tiktok-clone-react.vercel.app/",
-  },
-  {
-    name: "Cryptoverse",
-    description:
-      "Best Cryptocurrency web application that allows users to view price, market cap and daily change in realtime for almost every cryptocurrency in the world.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project5,
-    source_code_link: "https://github.com/Eagle1705/Portfolio",
-    live_site_link: "https://reactjscryptoapp.netlify.app/",
-  },
-  {
-    name: "Travel Advisor",
-    description:
-      "Web application that enables you to view your nearby restaurants, hotels and attractions which can be sorted by ratings, price and much more.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "rapidapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "material-ui",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: project6,
-    source_code_link: "https://github.com/Eagle1705/Portfolio",
-    live_site_link: "https://travel-advisor-reactjs.netlify.app/",
-  },
+
 ] as const;
 
 export const SOCIALS = [
   {
-    name: "YouTube",
-    icon: youtube,
-    link: "https://www.youtube.com/@OPGAMER.",
-  },
-  {
     name: "Linkedin",
     icon: linkedin,
-    link: "https://www.linkedin.com/",
-  },
-  {
-    name: "Twitter",
-    icon: twitter,
-    link: "https://twitter.com/",
+    link: "https://www.linkedin.com/in/francesco-carmelo-alongi-803282274/",
   },
   {
     name: "GitHub",
     icon: github,
     link: "https://github.com/Eagle1705",
+  },
+  {
+    name: "Instagram",
+    icon: twitter,
+    link: "https://www.instagram.com/fralongi1705_/",
   },
 ] as const;

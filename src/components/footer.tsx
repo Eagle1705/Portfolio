@@ -3,9 +3,16 @@ import { Link } from "react-router-dom";
 import { SOCIALS } from "../constants";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
+import { TRANSLATIONS } from "../locales/translations";
+import { type Language } from "../locales";
+
+type FooterProps = {
+  language: Language;
+};
 
 // Footer
-const Footer = () => {
+const Footer = ({ language }: FooterProps) => {
+  const t = TRANSLATIONS[language];
   return (
     <nav
       className={cn(
@@ -15,8 +22,7 @@ const Footer = () => {
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <p className="text-white text-md font-bold flex">
-          &copy; Francesco Alongi {new Date().getFullYear()}. All rights
-          reserved.
+          {t.footerText}
         </p>
 
         {/* Nav Links (Desktop) */}

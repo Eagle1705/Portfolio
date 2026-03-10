@@ -8,8 +8,14 @@ import { EXPERIENCES } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
+import { TRANSLATIONS } from "../locales/translations";
+import { type Language } from "../locales";
 
 import "react-vertical-timeline-component/style.min.css";
+
+type ExperienceProps = {
+  language: Language;
+};
 
 type ExperienceCardProps = {
   experience: (typeof EXPERIENCES)[number];
@@ -66,14 +72,16 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => {
 };
 
 // Experience
-export const Experience = () => {
+export const Experience = ({ language }: ExperienceProps) => {
+  const t = TRANSLATIONS[language];
+  
   return (
     <SectionWrapper idName="work">
       <>
         {/* Title */}
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>What I have done so far</p>
-          <h2 className={styles.sectionHeadText}>Work Experience.</h2>
+          <p className={styles.sectionSubText}>{t.experienceSubtitle}</p>
+          <h2 className={styles.sectionHeadText}>{t.experienceTitle}</h2>
         </motion.div>
 
         {/* Experience Card */}

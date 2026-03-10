@@ -6,6 +6,7 @@ import { toast } from "sonner";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { type Language } from "../locales";
+import { TRANSLATIONS } from "../locales/translations";
 import { styles } from "../styles";
 import { slideIn } from "../utils/motion";
 
@@ -15,6 +16,7 @@ type ContactProps = {
 
 // Contact
 export const Contact = ({ language }: ContactProps) => {
+  const t = TRANSLATIONS[language]
   const isItalian = language === "it";
   const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState({
@@ -144,10 +146,10 @@ export const Contact = ({ language }: ContactProps) => {
         >
           {/* Title */}
           <p className={styles.sectionSubText}>
-            {isItalian ? "Restiamo in contatto" : "Get in touch"}
+            {t.contactSubtitle}
           </p>
           <h3 className={styles.sectionHeadText}>
-            {isItalian ? "Contatti." : "Contact."}
+            {t.contactTitle}.
           </h3>
 
           {/* Form */}

@@ -5,6 +5,12 @@ import { SERVICES } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { fadeIn, textVariant } from "../utils/motion";
+import { TRANSLATIONS } from "../locales/translations";
+import { type Language } from "../locales";
+
+type AboutProps = {
+  language: Language;
+};
 
 type ServiceCardProps = {
   index: number;
@@ -39,14 +45,16 @@ const ServiceCard = ({ index, title, icon }: ServiceCardProps) => {
 };
 
 // About
-export const About = () => {
+export const About = ({ language }: AboutProps) => {
+  const t = TRANSLATIONS[language];
+  
   return (
     <SectionWrapper idName="about">
       <>
         {/* Title */}
         <motion.div variants={textVariant()}>
-          <p className={styles.sectionSubText}>Introduction</p>
-          <h2 className={styles.sectionHeadText}>Overview.</h2>
+          <p className={styles.sectionSubText}>{t.aboutSubtitle}</p>
+          <h2 className={styles.sectionHeadText}>{t.aboutTitle}</h2>
         </motion.div>
 
         {/* Body */}
@@ -54,11 +62,7 @@ export const About = () => {
           variants={fadeIn(undefined, undefined, 0.1, 1)}
           className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          I'm a skilled website developer with experience in TypeScript and
-          Javascript, and expertise in frameworks like React, Node.js, and
-          Three.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
+          {t.aboutDescription}
         </motion.p>
 
         {/* Service Card */}

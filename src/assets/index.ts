@@ -47,10 +47,6 @@ import linkedin from "./socials/linkedin.svg";
 import twitter from "./socials/twitter.svg";
 import youtube from "./socials/youtube.svg";
 
-import user1 from "./testimonials/user1.jpg";
-import user2 from "./testimonials/user2.jpg";
-import user3 from "./testimonials/user3.jpg";
-
 export {
   backend,
   bulb,
@@ -93,7 +89,4 @@ export {
   youtube,
   linkedin,
   twitter,
-  user1,
-  user2,
-  user3,
 };

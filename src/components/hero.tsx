@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import { ComputersCanvas } from "./canvas";
 import { type Language } from "../locales";
+import { TRANSLATIONS } from "../locales/translations";
 import { styles } from "../styles";
 import { cn } from "../utils/lib";
 
@@ -11,7 +12,7 @@ type HeroProps = {
 
 // Hero
 export const Hero = ({ language }: HeroProps) => {
-  const isItalian = language === "it";
+  const t = TRANSLATIONS[language];
 
   return (
     <section className="relative w-full h-screen mx-auto">
@@ -30,13 +31,11 @@ export const Hero = ({ language }: HeroProps) => {
         {/* About Me */}
         <div>
           <h1 className={cn(styles.heroHeadText, "text-white")}>
-            {isItalian ? "Ciao, sono " : "Hi, I'm "}
+            {t.heroGreeting}
             <span className="text-[#915eff]">Francesco Alongi</span>
           </h1>
           <p className={cn(styles.heroSubText, "mt-2 text-white-100")}>
-            {isItalian ? "Sviluppo visual 3D, interfacce " : "I develop 3D visuals, user "}
-            <br className="sm:block hidden" />
-            {isItalian ? "utente e applicazioni web" : "interfaces and web applications"}
+            {t.heroDescription}
           </p>
         </div>
       </div>

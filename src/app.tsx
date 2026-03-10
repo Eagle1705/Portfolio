@@ -4,7 +4,6 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
   Tech,
@@ -43,18 +42,17 @@ const App = () => {
           <Navbar hide language={language} setLanguage={setLanguage} />
           <Hero language={language} />
         </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
+        <About language={language} />
+        <Experience language={language} />
+        <Tech language={language} />
+        <Works language={language} />
 
         {/* Contact */}
         <div className="relative z-0">
           <Contact language={language} />
           <StarsCanvas />
         </div>
-        <Footer />
+        <Footer language={language} />
       </div>
     </BrowserRouter>
   );
