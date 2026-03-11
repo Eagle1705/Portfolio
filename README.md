@@ -1,7 +1,5 @@
 # 3D Portfolio - Francesco Alongi
 
-![3D Portfolio](/.github/images/img_main.png "3D Portfolio - Francesco Alongi")
-
 A modern 3D portfolio built with React, Three.js, TypeScript and Tailwind CSS. Showcasing projects, skills, and experience with a fully functional contact form powered by EmailJS.
 
 ## 📋 Table of Contents
@@ -164,16 +162,6 @@ This project uses the following open-source libraries and resources:
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 
-## 🚀 Deploy on Netlify
-
-The easiest way to deploy is using [Netlify](https://netlify.app):
-
-1. Push your code to GitHub
-2. Connect your repository to Netlify
-3. Set environment variables in Netlify settings
-4. Netlify will automatically build and deploy
-
-For more details, check [Vite deployment documentation](https://vitejs.dev/guide/static-deploy).
 
 ## 📄 License
 
@@ -298,17 +286,6 @@ VITE_APP_EMAILJS_RECIEVER=your@email.com
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
-
-
-## :camera: Screenshots
-
-![Showcase your skills](/.github/images/img1.png "Showcase your skills")
-
-![Showcase your projects](/.github/images/img2.png "Showcase your projects")
-
-![Modern UI/UX](/.github/images/img3.png "Modern UI/UX")
-
-![Functional Contact form](/.github/images/img4.png "Functional Contact form")
 
 ## :gear: Tech Stack
 
