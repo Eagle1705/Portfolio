@@ -36,7 +36,7 @@ const App = () => {
   }, [language]);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar hide language={language} setLanguage={setLanguage} />
