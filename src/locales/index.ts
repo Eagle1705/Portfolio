@@ -7,14 +7,14 @@ export const DEFAULT_LANGUAGE: Language = "en";
 export const NAV_LABELS: Record<Language, Record<string, string>> = {
   en: {
     about: "About",
-    work: "Work",
+    projects: "Projects",
     contact: "Contact",
     "source-code": "Source Code",
     langSwitch: "IT",
   },
   it: {
     about: "Chi sono",
-    work: "Progetti",
+    projects: "Progetti",
     contact: "Contatti",
     "source-code": "Codice",
     langSwitch: "EN",

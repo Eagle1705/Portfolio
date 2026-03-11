@@ -1,45 +1,189 @@
-<a name="readme-top"></a>
+# 3D Portfolio - Francesco Alongi
 
-# Modern 3D Portfolio using React, Three.js and Typescript
+![3D Portfolio](/.github/images/img_main.png "3D Portfolio - Francesco Alongi")
 
-![Modern 3D Portfolio using React, Three.js and Typescript](/.github/images/img_main.png "Modern 3D Portfolio using React, Three.js and Typescript")
+A modern 3D portfolio built with React, Three.js, TypeScript and Tailwind CSS. Showcasing projects, skills, and experience with a fully functional contact form powered by EmailJS.
 
-[![Ask Me Anything!](https://flat.badgen.net/static/Ask%20me/anything?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy "Ask Me Anything!")
-[![GitHub license](https://flat.badgen.net/github/license/sanidhyy/3d-portfolio?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/3d-portfolio/blob/main/LICENSE "GitHub license")
-[![Maintenance](https://flat.badgen.net/static/Maintained/yes?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/3d-portfolio/commits/main "Maintenance")
-[![GitHub branches](https://flat.badgen.net/github/branches/sanidhyy/3d-portfolio?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/3d-portfolio/branches "GitHub branches")
-[![Github commits](https://flat.badgen.net/github/commits/sanidhyy/3d-portfolio?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/3d-portfolio/commits "Github commits")
-[![GitHub issues](https://flat.badgen.net/github/issues/sanidhyy/3d-portfolio?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/3d-portfolio/issues "GitHub issues")
-[![GitHub pull requests](https://flat.badgen.net/github/prs/sanidhyy/3d-portfolio?icon=github&color=black&scale=1.01)](https://github.com/sanidhyy/3d-portfolio/pulls "GitHub pull requests")
-[![Netlify status](https://api.netlify.com/api/v1/badges/5c77ba92-e2f5-468e-99f1-3543906a90cb/deploy-status)](https://shubam.netlify.app/ "Netlify status")
+## 📋 Table of Contents
 
-<!-- Table of Contents -->
-<details>
+- [Folder Structure](#folder-structure)
+- [Getting Started](#getting-started)
+- [Tech Stack](#tech-stack)
+- [Acknowledgements](#acknowledgements)
+- [Deploy on Netlify](#deploy-on-netlify)
 
-<summary>
+## 📁 Folder Structure
 
-# :notebook_with_decorative_cover: Table of Contents
+```bash
+3d-portfolio/
+  |- public/
+    |-- desktop_pc/
+    |-- planet/
+    |-- logo_clean.png
+  |- src/
+    |-- assets/
+        |--- company/
+        |--- projects/
+        |--- socials/
+        |--- tech/
+        |--- index.ts
+    |-- components/
+        |--- canvas/
+        |--- about.tsx
+        |--- contact.tsx
+        |--- experience.tsx
+        |--- footer.tsx
+        |--- hero.tsx
+        |--- index.ts
+        |--- loader.tsx
+        |--- navbar.tsx
+        |--- tech.tsx
+        |--- works.tsx
+    |-- constants/
+        |--- index.ts
+    |-- hoc/
+        |--- index.ts
+        |--- section-wrapper.tsx
+    |-- locales/
+        |--- index.ts
+        |--- translations.ts
+    |-- utils/
+        |--- lib.ts
+        |--- motion.ts
+    |-- app.tsx
+    |-- env.d.ts
+    |-- index.css
+    |-- main.tsx
+    |-- styles.ts
+  |- .env
+  |- .gitignore
+  |- index.html
+  |- package.json
+  |- tailwind.config.ts
+  |- tsconfig.json
+  |- vite.config.ts
+```
 
-</summary>
+## 🛠️ Getting Started
 
-- [Folder Structure](#bangbang-folder-structure)
-- [Getting Started](#toolbox-getting-started)
-- [Screenshots](#camera-screenshots)
-- [Tech Stack](#gear-tech-stack)
-- [Stats](#wrench-stats)
-- [Contribute](#raised_hands-contribute)
-- [Acknowledgements](#gem-acknowledgements)
-- [Buy Me a Coffee](#coffee-buy-me-a-coffee)
-- [Follow Me](#rocket-follow-me)
-- [Learn More](#books-learn-more)
-- [Deploy on Netlify](#page_with_curl-deploy-on-netlify)
-- [Give A Star](#star-give-a-star)
-- [Star History](#star2-star-history)
-- [Give A Star](#star-give-a-star)
+### Prerequisites
 
-</details>
+- Git
+- NodeJS
 
-## :bangbang: Folder Structure
+### Setup Instructions
+
+1. Clone this repository:
+```bash
+git clone https://github.com/Eagle1705/Portfolio.git
+cd Portfolio
+```
+
+2. Create `.env` file in root directory with EmailJS configuration:
+
+```env
+VITE_APP_SERVICE_ID=your_service_id
+VITE_APP_TEMPLATE_ID=your_template_id
+VITE_APP_EMAILJS_KEY=your_public_key
+VITE_APP_EMAILJS_RECIEVER=your@email.com
+```
+
+3. Install dependencies:
+```bash
+npm install --legacy-peer-deps
+```
+
+4. Start development server:
+```bash
+npm run dev
+```
+
+5. Build for production:
+```bash
+npm run build
+```
+
+### EmailJS Configuration
+
+To set up EmailJS for the contact form:
+
+1. Visit [EmailJS](https://emailjs.com)
+2. Create/Log in to your account
+3. Set up an Email Service
+4. Create an Email Template with these variables:
+   - `{{from_name}}`
+   - `{{from_email}}`
+   - `{{message}}`
+5. Copy your **Service ID**, **Template ID**, and **Public Key** to `.env`
+
+## 📸 Features
+
+- 3D interactive background with Three.js
+- Responsive mobile-first design
+- Dark theme with modern UI/UX
+- Multi-language support (English/Italian)
+- Smooth animations with Framer Motion
+- Functional contact form with EmailJS
+- Optimized performance
+
+## ⚙️ Tech Stack
+
+- **React 18+** - UI Library
+- **TypeScript** - Type safety
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **Three.js** - 3D Graphics
+- **React Router** - Navigation
+- **EmailJS** - Contact form service
+- **Sonner** - Toast notifications
+
+## 📦 Dependencies
+
+Main dependencies:
+- `@emailjs/browser` - Email service
+- `@react-three/drei` - 3D utilities
+- `@react-three/fiber` - 3D rendering
+- `framer-motion` - Animations
+- `react-router-dom` - Routing
+- `react-vertical-timeline-component` - Timeline UI
+- `tailwindcss` - CSS framework
+- `three` - 3D library
+
+See `package.json` for complete list.
+
+## 📝 Acknowledgements
+
+This project uses the following open-source libraries and resources:
+
+- [React](https://react.dev/)
+- [Three.js](https://threejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [EmailJS](https://emailjs.com/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+## 🚀 Deploy on Netlify
+
+The easiest way to deploy is using [Netlify](https://netlify.app):
+
+1. Push your code to GitHub
+2. Connect your repository to Netlify
+3. Set environment variables in Netlify settings
+4. Netlify will automatically build and deploy
+
+For more details, check [Vite deployment documentation](https://vitejs.dev/guide/static-deploy).
+
+## 📄 License
+
+This project is open source and available under the MIT License. See [LICENSE](./LICENSE.md) for details.
+
+---
+
+**Built with ❤️ by Francesco Alongi**
+
+
 
 Here is the folder structure of this app.
 
@@ -154,7 +298,9 @@ VITE_APP_EMAILJS_RECIEVER=your@email.com
 
 **NOTE:** Please make sure to keep your API keys and configuration values secure and do not expose them publicly.
 
-## :camera: Screenshots:
+
+
+## :camera: Screenshots
 
 ![Showcase your skills](/.github/images/img1.png "Showcase your skills")
 
@@ -166,84 +312,27 @@ VITE_APP_EMAILJS_RECIEVER=your@email.com
 
 ## :gear: Tech Stack
 
-[![React JS](https://skillicons.dev/icons?i=react "React JS")](https://react.dev/ "React JS") [![Vite JS](https://skillicons.dev/icons?i=vite "Vite JS")](https://vitejs.dev/ "Vite JS") [![Typescript](https://skillicons.dev/icons?i=ts "Typescript")](https://www.typescriptlang.org/ "Typescript") [![Tailwind CSS](https://skillicons.dev/icons?i=tailwind "Tailwind CSS")](https://tailwindcss.com/ "Tailwind CSS") [![Netlify](https://skillicons.dev/icons?i=netlify "Netlify")](https://netlify.app/ "Netlify")
-
-## :wrench: Stats
-
-[![Stats for 3D Portfolio](/.github/images/stats.svg "Stats for 3D Portfolio")](https://pagespeed.web.dev/analysis?url=https://shubam.netlify.app/ "Stats for 3D Portfolio")
-
-## :raised_hands: Contribute
-
-You might encounter some bugs while using this app. You are more than welcome to contribute. Just submit changes via pull request and I will review them before merging. Make sure you follow community guidelines.
+- **React JS** - UI Library
+- **Vite JS** - Build tool
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Netlify** - Hosting
 
 ## :gem: Acknowledgements
 
-Useful resources and dependencies that are used in 3D Portfolio.
+Main dependencies used in this project:
 
-- [@emailjs/browser](https://www.npmjs.com/package/@emailjs/browser): ^3.11.0
-- [@react-three/drei](https://www.npmjs.com/package/@react-three/drei): ^9.96.1
-- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber): ^8.13.4
-- [clsx](https://www.npmjs.com/package/clsx): ^2.1.0
-- [framer-motion](https://www.npmjs.com/package/framer-motion): ^10.12.18
-- [maath](https://www.npmjs.com/package/maath): ^0.10.7
-- [react](https://www.npmjs.com/package/react): ^18.2.0
-- [react-dom](https://www.npmjs.com/package/react-dom): ^18.2.0
-- [react-router-dom](https://www.npmjs.com/package/react-router-dom): ^6.21.3
-- [react-tilt](https://www.npmjs.com/package/react-tilt): ^1.0.2
-- [react-vertical-timeline-component](https://www.npmjs.com/package/react-vertical-timeline-component): ^3.6.0
-- [sonner](https://www.npmjs.com/package/sonner): ^1.3.1
-- [tailwind-merge](https://www.npmjs.com/package/tailwind-merge): ^2.2.1
-- [three](https://www.npmjs.com/package/three): ^0.160.1
-- [@types/react](https://www.npmjs.com/package/@types/react): ^18.2.48
-- [@types/react-dom](https://www.npmjs.com/package/@types/react-dom): ^18.2.18
-- [@types/react-vertical-timeline-component](https://www.npmjs.com/package/@types/react-vertical-timeline-component): ^3.3.6
-- [@types/tailwindcss](https://www.npmjs.com/package/@types/tailwindcss): ^3.1.0
-- [@vitejs/plugin-react](https://www.npmjs.com/package/@vitejs/plugin-react): ^4.0.3
-- [autoprefixer](https://www.npmjs.com/package/autoprefixer): ^10.4.17
-- [postcss](https://www.npmjs.com/package/postcss): ^8.4.31
-- [tailwindcss](https://www.npmjs.com/package/tailwindcss): ^3.3.3
-- [typescript](https://www.npmjs.com/package/typescript): ^5.3.3
-- [vite](https://www.npmjs.com/package/vite): ^5.0.12
+- [@emailjs/browser](https://www.npmjs.com/package/@emailjs/browser)
+- [@react-three/drei](https://www.npmjs.com/package/@react-three/drei)
+- [@react-three/fiber](https://www.npmjs.com/package/@react-three/fiber)
+- [framer-motion](https://www.npmjs.com/package/framer-motion)
+- [react](https://www.npmjs.com/package/react)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [react-vertical-timeline-component](https://www.npmjs.com/package/react-vertical-timeline-component)
+- [tailwindcss](https://www.npmjs.com/package/tailwindcss)
+- [three](https://www.npmjs.com/package/three)
 
-## :coffee: Buy Me a Coffee
-
-[<img src="https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" width="200" />](https://www.buymeacoffee.com/sanidhy "Buy me a Coffee")
-
-## :rocket: Follow Me
-
-[![GitHub followers](https://img.shields.io/github/followers/sanidhyy?style=social&label=Follow&maxAge=2592000)](https://github.com/sanidhyy "Follow Me")
-[![Twitter](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2FTechnicalShubam)](https://twitter.com/intent/tweet?text=Check+out+this+amazing+app:&url=https%3A%2F%2Fgithub.com%2Fsanidhyy%2F3d-portfolio "Tweet")
-[![YouTube](https://img.shields.io/youtube/channel/subscribers/UCNAz_hUVBG2ZUN8TVm0bmYw)](https://www.youtube.com/@OPGAMER. "Subscribe my YouTube Channel")
-
-## :books: Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+See `package.json` for complete list of dependencies.
 
 ## :page_with_curl: Deploy on Netlify
 
@@ -251,19 +340,11 @@ The easiest way to deploy your Vite.js app is to use the [Netlify Platform](http
 
 Check out [Vite.js deployment documentation](https://vitejs.dev/guide/static-deploy) for more details.
 
-## :star: Give A Star
+## 📄 License
 
-You can also give this repository a star to show more people and they can use this repository.
+This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE.md) file for details.
 
-## :star2: Star History
+---
 
-<a href="https://star-history.com/#sanidhyy/3d-portfolio&Timeline">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=sanidhyy/3d-portfolio&type=Timeline&theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=sanidhyy/3d-portfolio&type=Timeline" />
-  <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=sanidhyy/3d-portfolio&type=Timeline" />
-</picture>
-</a>
+**Built with ❤️ by Francesco Alongi**
 
-<br />
-<p align="right">(<a href="#readme-top">back to top</a>)</p>

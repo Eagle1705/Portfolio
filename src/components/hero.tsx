@@ -32,6 +32,7 @@ export const Hero = ({ language }: HeroProps) => {
         <div>
           <h1 className={cn(styles.heroHeadText, "text-white")}>
             {t.heroGreeting}
+            <br />
             <span className="text-[#915eff]">Francesco Alongi</span>
           </h1>
           <p className={cn(styles.heroSubText, "mt-2 text-white-100")}>

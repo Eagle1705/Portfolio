@@ -21,8 +21,8 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
       "I'm a skilled software developer with experience in JavaScript and TypeScript. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!",
 
     // Experience Section
-    experienceTitle: "Work Experience.",
-    experienceSubtitle: "What I have done.",
+    experienceTitle: "Education and Professional Journey.",
+    experienceSubtitle: "My journey",
 
     // Tech Section
     techTitle: "Tech Stack.",
@@ -72,8 +72,8 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
       "Sono uno sviluppatore software esperto con competenze in JavaScript e TypeScript. Sono un veloce imparatore e collaboro strettamente con i clienti per creare soluzioni efficienti, scalabili e user-friendly che risolvono problemi del mondo reale. Lavoriamo insieme per portare in vita le tue idee!",
 
     // Experience Section
-    experienceTitle: "Esperienza Lavorativa.",
-    experienceSubtitle: "Quello che ho fatto.",
+    experienceTitle: "Percorso Formativo e Professionale.",
+    experienceSubtitle: "Il mio percorso",
 
     // Tech Section
     techTitle: "Stack Tecnologico.",

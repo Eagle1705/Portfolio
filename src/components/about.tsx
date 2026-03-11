@@ -27,7 +27,7 @@ const ServiceCard = ({ index, title, icon }: ServiceCardProps) => {
         scale: 1,
         speed: 450,
       }}
-      className="xs:w-[250px] w-full"
+      className="xs:w-[250px] w-[280px] max-w-full"
     >
       <motion.div
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
@@ -60,13 +60,13 @@ export const About = ({ language }: AboutProps) => {
         {/* Body */}
         <motion.p
           variants={fadeIn(undefined, undefined, 0.1, 1)}
-          className="empty-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="empty-4 text-secondary text-[17px] md:max-w-3xl max-w-xl leading-[30px]"
         >
           {t.aboutDescription}
         </motion.p>
 
         {/* Service Card */}
-        <div className="mt-20 flex flex-wrap gap-10">
+        <div className="mt-20 flex flex-wrap justify-center gap-10">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.title} index={i} {...service} />
           ))}

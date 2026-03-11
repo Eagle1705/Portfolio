@@ -44,8 +44,7 @@ import project6 from "./projects/project6.png";
 
 import github from "./socials/github.svg";
 import linkedin from "./socials/linkedin.svg";
-import twitter from "./socials/twitter.svg";
-import youtube from "./socials/youtube.svg";
+import instagram from "./socials/instagram.svg";
 
 export {
   backend,
@@ -86,7 +85,6 @@ export {
   project5,
   project6,
   github,
-  youtube,
   linkedin,
-  twitter,
+  instagram,
 };

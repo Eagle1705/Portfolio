@@ -31,7 +31,7 @@ import {
   project5,
   project6,
   linkedin,
-  twitter,
+  instagram,
   github,
 } from "../assets";
 
@@ -266,7 +266,7 @@ export const SOCIALS = [
   },
   {
     name: "Instagram",
-    icon: twitter,
+    icon: instagram,
     link: "https://www.instagram.com/fralongi1705_/",
   },
 ] as const;

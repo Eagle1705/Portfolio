@@ -108,7 +108,7 @@ export const Contact = ({ language }: ContactProps) => {
           from_name: form.name,
           to_name: "Francesco Alongi",
           from_email: form.email.trim().toLowerCase(),
-          to_email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
+          email: import.meta.env.VITE_APP_EMAILJS_RECIEVER,
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_KEY,
