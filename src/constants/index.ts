@@ -250,6 +250,28 @@ export const PROJECTS = [
     source_code_link: "https://github.com/Eagle1705/greenvalley",
     live_site_link: "https://eagle1705.github.io/greenvalley/",
   },
+  {
+    name: "Coach Cristian Cucinotta",
+    description:
+      "Professional website for powerlifting coach and personal trainer Cristian Cucinotta, featuring services, competition results, gallery and online coaching booking in a reserved training centre in San Gregorio di Catania.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "typescript",
+        color: "green-text-gradient",
+      },
+      {
+        name: "tailwindcss",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: project3,
+    source_code_link: "https://github.com/Eagle1705/coachcucinotta",
+    live_site_link: "https://eagle1705.github.io/coachcucinotta/",
+  },
 
 ] as const;
 

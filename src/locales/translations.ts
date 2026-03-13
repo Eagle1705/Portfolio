@@ -41,6 +41,9 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     projectGreenValley: "GreenValley FC",
     projectGreenValleyDescription:
       "Official website for GreenValley FC football club, featuring team roster, match schedules, news updates, and fan engagement tools to connect with supporters and promote the club.",
+    projectCoachCucinotta: "Coach Cristian Cucinotta",
+    projectCoachCucinottaDescription:
+      "Professional website for powerlifting coach and personal trainer Cristian Cucinotta, featuring services, competition results, gallery and online coaching booking in a reserved training centre in San Gregorio di Catania.",
 
     // Contact Section
     contactTitle: "Get In Touch",
@@ -92,6 +95,9 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     projectGreenValley: "GreenValley FC",
     projectGreenValleyDescription:
       "Sito ufficiale del club calcistico GreenValley FC, con roster della squadra, calendario delle partite, aggiornamenti di notizie e strumenti di coinvolgimento dei fan per connettersi con i supporter e promuovere il club.",
+    projectCoachCucinotta: "Coach Cristian Cucinotta",
+    projectCoachCucinottaDescription:
+      "Sito professionale per il coach di powerlifting e personal trainer Cristian Cucinotta, con servizi, risultati agonistici, galleria e prenotazione coaching online in un centro riservato a San Gregorio di Catania.",
 
     // Contact Section
     contactTitle: "Mettiti in Contatto",
